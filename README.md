@@ -6,8 +6,8 @@ This project is developed as a final project for COMS E6998 Topics in Robot Lear
 
 Contributors
 =================
-Zizhao Wang: wangzizhao
-Jack Shi: junyaoshi
+- Zizhao Wang: wangzizhao
+- Jack Shi: junyaoshi
 
 Introduction
 =================
@@ -127,7 +127,7 @@ pip install -e baselines
 Quick Start
 =================
 
-To run vanilla PPO training or Human-Guided RL.
+To run vanilla PPO training or Human-Guided RL
 
 ```bash
 python3 feedback-robot-learning/husky_navigate_ppo2.py
@@ -136,7 +136,7 @@ python3 feedback-robot-learning/husky_navigate_ppo2.py
 Make sure to adjust the hyperparemeters in the file as needed.
 
 
-To analyze experiment results.
+To analyze experiment results
 
 ```bash
 python3 feedback-robot-learning/simulation_and_analysis/husky_sparse_vs_feedback_analysis.py
