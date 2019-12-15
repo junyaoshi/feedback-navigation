@@ -1,0 +1,39 @@
+gibson_dir: "/home/jackshi/GibsonEnv"
+envname: FetchNavigateEnv
+model_id: stadium
+target_orn: [0, 0, 3.1415926]
+target_pos: [-15, 21, 0.15]
+initial_orn: [0, 0, 3.1415926]
+initial_pos: [15, 21, 0.15]
+fov: 1.57
+is_discrete: true
+
+use_filler: true
+display_ui: true
+show_diagnostics: true
+ui_num: 2
+ui_components: [RGB_FILLED, DEPTH]
+random:
+  random_initial_pose : false
+  random_target_pose : false
+  random_init_x_range: [-0.1, 0.1]
+  random_init_y_range: [-0.1, 0.1]
+  random_init_z_range: [-0.1, 0.1]
+  random_init_rot_range: [-0.1, 0.1]
+  random_target_range: 0.1
+
+output: [nonviz_sensor]
+resolution: 256
+
+speed:
+  timestep: 0.01
+  frameskip: 5
+
+mode: gui #gui|headless
+semantic_source: 1                              # 1 for Stanford 2D3Ds, 2 for MP3D
+semantic_color: 2                               # 1 for distinctive color, 2 for label index rgb code
+verbose: false
+
+target_labels: [11]
+
+vel: 0.1

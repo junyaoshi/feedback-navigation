@@ -1,0 +1,9 @@
+*/models/**
+models/*
+husky_navigate_*D_performance*.p
+simulation_and_analysis/husky_navigate_*D_performance*.p
+simulation_and_analysis/husky_sparse_vs_feedback.py
+simulation_and_analysis/S*
+test*
+*/rslts
+*/rslts/**

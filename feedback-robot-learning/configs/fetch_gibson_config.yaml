@@ -1,0 +1,42 @@
+---
+gibson_dir: "/home/david/workspace/GibsonEnv"
+envname: FetchNavigateEnv
+model_id: space7
+initial_orn: [0, 0, 4.71]
+initial_pos: [0, 0, 0.2]
+target_orn: [0, 0, 0] # not used
+target_pos: [0, 0, 0] # not used
+fov: 1.57
+is_discrete: true
+
+window_width: 256
+window_height: 256
+resolution: 256
+
+use_filler: true
+display_ui: true
+show_diagnostics: false
+ui_num: 2
+ui_components: [RGB_FILLED, DEPTH]
+random:
+  random_initial_pose : false
+  random_target_pose : false
+  random_init_x_range: [-0.1, 0.1]
+  random_init_y_range: [-0.1, 0.1]
+  random_init_z_range: [-0.1, 0.1]
+  random_init_rot_range: [-0.1, 0.1]
+
+output: [rgb_filled, depth, semantics]
+
+speed:
+  timestep: 0.01
+  frameskip: 5
+
+mode: gui #gui|headless
+semantic_source: 1                              # 1 for Stanford 2D3Ds, 2 for MP3D
+semantic_color: 2                               # 1 for distinctive color, 2 for label index rgb code
+verbose: false
+
+target_labels: [11]
+
+vel: 0.1

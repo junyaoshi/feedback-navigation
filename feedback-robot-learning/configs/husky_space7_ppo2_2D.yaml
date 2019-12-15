@@ -1,0 +1,81 @@
+envname: Husky2DNavigateEnv
+model_id: space7
+target_orn: [0, 0, 4.71]
+# experiment
+target_pos: [-11.0, 22.0, 0.15]
+initial_orn: [0, 0, 1.57]
+initial_pos: [-7.0, 20.5, 0.15]
+# new room
+#target_pos: [-16.5, 48, 0.11]
+#initial_orn: [0, 0, 0]
+#initial_pos: [-21, 48.8, 0.11]
+fov: 1.57
+is_discrete: true
+
+use_filler: true
+display_ui: true
+show_diagnostics: false
+ui_num: 2
+ui_components: [RGB_FILLED, DEPTH]
+random:
+  random_initial_pose : true
+  random_target_pose : false
+  random_init_x_range: [-0.2, 0.2]
+  random_init_y_range: [-0.2, 0.2]
+  random_init_z_range: [-0.0, 0.0]
+  random_init_rot_range: [-0.1, 0.1]
+
+output: [nonviz_sensor] #, RGB_FILLED, DEPTH
+resolution: 256
+
+speed:
+  timestep: 0.0025 # 0.0025 0.01
+  frameskip: 1
+
+mode: gui #gui|headless
+verbose: false
+
+# mode flags
+run-mode: simulation # simulation|experiment
+rl_mode: true # if rl mode is true, all indicators and visualization will not be shown
+offline: false
+experiment_step_time: 1.5
+
+# env flags
+goal_range: 0.5 # tolerance range for determining whether or not husky has reached goal
+
+# embedding flags
+use_embedding: false
+autoencoder_batch_size: 16 # 16 performs the best
+
+# raycast flags
+use_raycast: true # whether to use raycast and return the info as observation
+raycast_num: 10 # number of rays casted for each observation step
+raycast_range: 6 # range of raycast, unit is pi/6 radians
+ray_length: 13 # length of each rayr
+
+# state space flags
+use_goal_info: true # whether to include goal info in the observation returned by ray casting
+use_coordinate_and_orientation: true # whether to include coordinates and orientation in state space
+
+# action flags
+exclude_backward: true # whether backward action is excluded or not, must be true at the time, false hasn't been implemented!
+use_reset: true # whether to use reset for action space or pid control
+collision_step_limit: 1 # number of steps where robot's position and orientation don't change to trigger collision detection
+
+# indicator and visualization flags
+draw_path: false # whether to draw coorect path or not
+draw_blue_line: false # whether to draw the blue correct action indicator or not
+draw_green_arrow: false # whether to draw the green arrow action indicator or not, can only be used in experiment mode!!!
+show_rays: false # whether to display the rays at each step
+reset_fov: true # whether to reset the field of view after each step
+show_arrow_countdown: false # whether to draw the arrow countdown indicator or not, can only be used in experiment mode!!!
+
+# rich reward flags
+c_distance: -1.0
+c_angle: -0.3
+c_speed: 0
+c_angular_speed: 0
+
+
+
